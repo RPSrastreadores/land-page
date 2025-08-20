@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagamento via PIX</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .pix-container {
+      background: #000;
+      color: #fff;
+      padding: 62px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .pix-container img {
+      width: 100%;
+      max-width: 250px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+    }
+
+    .pix-container h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #ffd700;
+    }
+
+    .btn-mini {
+      position: relative;
+      background: transparent;
+      border: 2px solid #FFD700;
+      color: #f0f0f0;
+      padding: 10px 14px;
+      border-radius: 8px 0 8px 0;
+      font-weight: bold;
+      font-size: 14px;
+      display: inline-block;
+      margin: 16px auto 0 auto;
+      overflow: hidden;
+      z-index: 0;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-mini::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      transform: rotate(25deg);
+      animation: brilho 2.5s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .btn-mini span {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes brilho {
+      0% {
+        transform: translateX(-100%) rotate(25deg);
+      }
+      100% {
+        transform: translateX(100%) rotate(25deg);
+      }
+    }
+
+    .copiar-btn {
+      padding: 10px 20px;
+      background: #ffd700;
+      border: none;
+      border-radius: 8px;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pix-container">
+    <h2>Você está quase lá!</h2>
+    <img src="qr code.jpg" alt="QR Code do Pagamento PIX" />
+
+    <p id="pix-code" style="display: none;">
+      00020101021126950014br.gov.bcb.pix0136ae5db096-439d-4b18-9057-7022893c47770233Pagamento Mensal RPS rastreadores520400005303986540560.005802BR5922RUAN MARQUES DE BARROS6007CUBATAO62070503***6304FBB9
+    </p>
+
+    <button onclick="copiarPix()" class="copiar-btn">Copiar código PIX</button>
+
+    <p id="mensagem-copiado" style="color: #ffd700; display: none; margin-top: 10px;">
+      Código copiado!
+    </p>
+
+    <p>Escaneie o QR Code para finalizar seu pagamento com segurança.</p>
+
+    <a
+      href="https://api.whatsapp.com/send?phone=5513997728395&text=Olá!%20já%20efetuei%20o%20pagamento%20via%20pix%20e%20gostaria%20de%20marcar%20a%20instalação%20do%20rastreador!"
+      class="btn-mini"
+      target="_blank"
+    >
+      <span>MARQUE A INSTALAÇÃO</span>
+    </a>
+  </div>
+
+  <script>
+    function copiarPix() {
+      const texto = document.getElementById("pix-code").innerText.trim();
+      navigator.clipboard.writeText(texto).then(function () {
+        document.getElementById("mensagem-copiado").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("mensagem-copiado").style.display = "none";
+        }, 2000);
+      }).catch(function (err) {
+        alert("Erro ao copiar o código: " + err);
+      });
+    }
+  </script>
+</body>
+</html>

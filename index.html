@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPS ratreadores - Soluções Inteligentes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos de Uso</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Pop-up Principal -->
+<div class="popup" id="popup-principal">
+  <div class="popup-content1">
+    <h2>Termos de Uso</h2>
+    <p3>Ao continuar navegando, você concorda com nossos 
+      <button class="link-termos" onclick="abrirPopupTermos()">Termos de Uso</button> 
+      e nossa Política de Privacidade.
+    </p3>
+    <button class="btn-aceito" onclick="fecharPopup()">Aceito</button>
+  </div>
+</div>
+
+<!-- Pop-up dos Termos -->
+<div class="popup" id="popup-termos">
+  <div class="popup-content1">
+    <h2>Termos de Uso</h2>
+    <p2>🔒 Ao contratar os serviços da RPS Rastreadores, o cliente declara estar ciente e de acordo com as condições a seguir. A RPS Rastreadores é uma empresa especializada na prestação de serviços de rastreamento veicular. Esclarecemos que nosso serviço não se caracteriza como seguro veicular, tampouco substitui qualquer modalidade de cobertura securitária.
+
+Nosso sistema atua exclusivamente como uma ferramenta de monitoramento e rastreamento, oferecendo suporte na localização do veículo em casos de furto, roubo ou desaparecimento. Não nos responsabilizamos pela recuperação do veículo, uma vez que essa atribuição é de competência exclusiva das autoridades policiais.
+
+Embora não sejamos responsáveis pela localização e recuperação do bem, nos comprometemos a prestar todo o suporte possível dentro de nossas atribuições técnicas, incluindo, mas não se limitando a: fornecimento da localização em tempo real do veículo às autoridades competentes, sempre que solicitado; acionamento remoto de bloqueio do veículo, conforme configurado previamente com o cliente; e contato imediato com órgãos de segurança pública, mediante solicitação formal do proprietário ou registro de boletim de ocorrência.
+
+A RPS Rastreadores mantém total disposição para colaborar com investigações, respeitando os limites legais de sigilo e privacidade. Informações sobre localização e histórico de trajetos serão disponibilizadas exclusivamente às autoridades, mediante solicitação formal.
+
+Ao utilizar os serviços da RPS Rastreadores, o cliente reconhece que a empresa atua como uma prestadora de serviço de rastreamento veicular e que não há qualquer garantia de recuperação do veículo em caso de perda, furto ou roubo, ainda que todos os procedimentos de suporte sejam realizados.
+</p2>
+
+    <button class="btn-voltar" onclick="voltarPopup()">Voltar</button>
+  </div>
+</div>
+
+<script>
+  // Mostrar popup principal ao carregar
+  window.onload = function() {
+    document.getElementById('popup-principal').style.display = 'flex';
+  }
+
+  function abrirPopupTermos() {
+    document.getElementById('popup-principal').style.display = 'none';
+    document.getElementById('popup-termos').style.display = 'flex';
+  }
+
+  function voltarPopup() {
+    document.getElementById('popup-termos').style.display = 'none';
+    document.getElementById('popup-principal').style.display = 'flex';
+  }
+
+  function fecharPopup() {
+    document.getElementById('popup-principal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="rastreador 3.png" alt="Logo RPS Rastreadores" height="80" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <a 
+  class="btn" 
+  href="https://wa.me/5513997728395?text=Olá!%20Quero%20falar%20com%20um%20consultor%20da%20RPS%20sobre%20proteção%20veicular." 
+  target="_blank">
+  Fale Conosco
+</a>
+    </div>
+  </header>
+
+  <!-- Hero Section Novo -->
+  <section id="home" class="banner-principal">
+    <div class="conteudo">
+      <h1>Proteção veicular 24h por dia<br><span>proteja sua conquista com a RPS rastreadores</span></h1>
+      <div class="botoes">
+        <button class="btn-proposta" id="openModal">QUERO receber proposta</button>
+        <a href="pagamento.html" class="btn">QUERO contratar online</a>
+
+
+</div>
+
+</div>
+
+<!-- Estrutura do Modal -->
+<div id="propostaModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Conte-nos um pouco mais...</h2>
+    <p>Preencha seus dados e receba uma proposta via WhatsApp!</p>
+
+    <form id="formProposta">
+      <input type="text" id="nome" placeholder="Me chamo" required>
+
+      <div style="display: flex; gap: 10px;">
+        <input type="text" id="ddd" placeholder="DDD" maxlength="2" required style="width: 30%;">
+        <input type="text" id="celular" placeholder="Celular" required style="width: 70%;">
+      </div>
+
+      <div id="stepVeiculo" class="step step-veiculo">
+        <h2>Meu veículo é um(a):</h2>
+
+        <div class="veiculos-opcoes">
+          <button type="button" class="veiculo-botao" onclick="selecionarVeiculo('Carro')">
+            <span class="icone">🚗</span>
+            <span class="texto">Carro</span>
+          </button>
+
+          <button type="button" class="veiculo-botao" onclick="selecionarVeiculo('Moto')">
+            <span class="icone">🏍️</span>
+            <span class="texto">Moto</span>
+          </button>
+
+          <button type="button" class="veiculo-botao" onclick="selecionarVeiculo('Outros')">
+            <span class="icone">🚛</span>
+            <span class="texto">Outros</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Botão correto para enviar -->
+      <button type="submit" class="btn-mini" style="display: block; margin: 20px auto 0 auto;">
+  Receba proposta
+</button>
+
+    </form>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  const modal = document.getElementById("propostaModal");
+  const btn = document.getElementById("openModal"); // precisa existir no HTML
+  const span = document.getElementsByClassName("close")[0];
+  let veiculoSelecionado = null;
+
+  btn.onclick = function () {
+    modal.style.display = "block";
+  }
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  function selecionarVeiculo(tipo) {
+    veiculoSelecionado = tipo;
+
+    // Feedback visual
+    document.querySelectorAll('.veiculo-botao').forEach(btn => btn.classList.remove('ativo'));
+    document.querySelectorAll('.veiculo-botao').forEach(btn => {
+      if (btn.innerText.includes(tipo)) {
+        btn.classList.add('ativo');
+      }
+    });
+  }
+
+  document.getElementById('formProposta').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const ddd = document.getElementById('ddd').value;
+    const celular = document.getElementById('celular').value;
+
+    if (!veiculoSelecionado) {
+      alert("Por favor, selecione o tipo de veículo.");
+      return;
+    }
+
+const numeroDestino = "5513997728395"; // Altere para seu número com DDI
+const mensagem = `Olá! Meu nome é ${nome}, Tenho um ${veiculoSelecionado}, e gostaria de contratar os serviços da RPS rastreadores para ele. Meu numero de telefone é (${ddd}) ${celular}.`;
+const link = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagem)}`;
+
+window.open(link, '_blank'); // abre WhatsApp em nova aba
+modal.style.display = "none";
+
+  });
+</script>
+
+
+</body>
+</html>
+
+      </div>
+    </div>
+
+    <div class="caixas-planos">
+  <div class="plano">
+    <div class="info-plano">
+      <h4>Plano Rastreamento Total</h4>
+      <o class="preco"><span>Por apenas</span><br><strong>R$1,99/dia</strong></o>
+    </div>
+    <!-- Botão -->
+<a href="pagamento.html" class="btn-mini">Contrate Já</a>
+  </div>
+
+<div class="plano">
+  <h4>Plano Proteção Extra</h4>
+  <p class="preco verde">Proteja até mais de um veículo!</p>
+
+  <a 
+    href="https://api.whatsapp.com/send?phone=5513997728395&text=Olá!%20Tenho%20mais%20de%20um%20veiculo%20e%20tenho%20interesse%20em%20contratar%20um%20palno%20para%20ambos." 
+    class="btn-mini"
+    target="_blank">
+    SAIBA MAIS
+  </a>
+<div>                                                                                    
+</div>
+
+  </section>
+
+<!-- Seção de Vídeo LOCAL -->
+<section id="video" class="secao-video">
+  <div class="container">
+    <h2>Assista e conheça mais sobre a RPS</h2>
+    <div class="video-wrapper">
+      <div class="balao-fundo"></div> <!-- 🔹 Balão de fundo -->
+      <video controls width="100%">
+        <source src="video.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução de vídeo.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<div class="curva-wrapper">
+  <svg class="curva-svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,5 Q620,170 1240,5 L1440,10 L0,0 Z" fill="#ffffff"></path>
+  </svg>
+  <div class="logo-centralizada">
+    <img src="logo.png" alt="Logo RPS" />
+  </div>
+</div>
+
+
+  <!-- Serviços -->
+<section id="servicos" class="servicos-nuflix">
+  <div class="container-servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="linha-verde"></div>
+  
+
+
+    <div class="grid-servicos">
+      <div class="item-servico">
+        <img src="rastreamento_branco.png" alt="Rastreamento Veicular" />
+        <p><strong>Rastreamento Veicular</strong><br>Monitore seu veículo em tempo real com precisão e segurança.</p>
+      </div>
+      <div class="item-servico">
+        <img src="icone_bloqueio_branco.png" alt="Bloqueio Remoto" />
+        <p><strong>Bloqueio Remoto</strong><br>Impeça a movimentação do veículo em caso de roubo ou furto.</p>
+      </div>
+      <div class="item-servico">
+        <img src="icone_atendimento_branco_sem_fundo.png" alt="Assistência 24h" />
+        <p><strong>Assistência 24h</strong><br>Suporte completo para você em qualquer situação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefícios -->
+  <section id="beneficios" class="benefits">
+    <div class="container">
+      <h2>Por que escolher a nossa empresa?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Monitoramento 24h</h3>
+          <p>Segurança em tempo real para seu veículo.</p>
+        </div>
+        <div class="card">
+          <h3>Atendimento Especializado</h3>
+          <p>Equipe pronta para te atender sempre.</p>
+        </div>
+        <div class="card">
+          <h3>Alta Tecnologia</h3>
+          <p>Trabalhamos com os melhores rastreadores disponiveis no mercado</p>
+        </div>
+        <div class="card">
+          <h3>Custo beneficio</h3>
+          <p>Sua conquista protegida pelo menor valor é aqui </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-benefits">
+  <div class="container-benefits">
+
+    <div class="image-app">
+      <img src="celular2.png" alt="Imagem do App">
+    </div>
+
+    <div class="content-benefits">
+      <h2>A facilidade que só o nosso<br> aplicativo pode te dar</h2>
+      <p>
+        Com o <strong>aplicativo da RPS Rastreador</strong>, você tem acesso a diversos benefícios que garantem mais controle e segurança para o seu veículo.
+      </p>
+
+      <ul>
+        <li>📍 Baixo custo mensal</li>
+        <li>📡 Localização por satélite</li>
+        <li>📑 Histórico de percurso</li>
+        <li>👀 Visualização em tempo real</li>
+        <li>💸 instalação Gratuita</li>
+        <li>🔔 Alerta de ignição ligada e desligada</li>
+        <li>🏎️ Velocidade do veículo</li>
+        <li>🧮 Controle de quilometragem</li>
+        <li>📊 Relatórios de paradas e tempo parado</li>
+        <li>💁 Suporte 24h</li>
+        <li>🛠️ Bloqueio Remoto</li>
+        <li>⚙️ Autonomia total do cliente</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="depoimentos">
+  <h2><span>Clientes</span> Satisfeitos</h2>
+
+  <div class="slider">
+
+    <!-- Controle dos slides -->
+    <input type="radio" name="slide" id="slide1" checked>
+    <input type="radio" name="slide" id="slide2">
+    <input type="radio" name="slide" id="slide3">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="imagens/cliente1.png" alt="Cliente 1">
+      <h3>Nicolly</h3>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="imagens/cliente2.png" alt="Cliente 2">
+      <h3>Kelly</h3>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="imagens/cliente 3.jpg" alt="Cliente 3">
+      <h3>Claudia</h3>
+    </div>
+
+    <!-- Botões bolinhas -->
+    <div class="nav-dots">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+    </div>
+  
+  </div>
+</section>
+
+
+
+
+
+  <!-- Chamada Final -->
+  <section class="cta">
+    <div class="container">
+      <h2>Pronto para proteger seu patrimônio?</h2>
+      <a   class="btn" 
+  href="https://wa.me/5513997728395?text=Olá!%20Quero%20falar%20com%20um%20consultor%20da%20RPS%20sobre%20proteção%20veicular." 
+  target="_blank">
+  Fale Conosco Agora</a>
+    </div>
+  </section>
+
+  <!-- Contato / Rodapé -->
+  <footer id="contato">
+    <div class="container">
+      <div class="footer-content">
+        <div class="logo">
+          <img src="logo sem fundo.png" alt="Logo RPS Rastreadores" height=200" />
+        </div>
+        <div>
+          
+          <p>WhatsApp: (13) 99772-8395</p>
+          <p>Email: rpsrastreadores@gmail.com</p>
+        </div>
+      <div class="social">
+   
+   <a href="https://g.page/r/CYutSCNnBEFMEAI/review" target="_blank">
+    <img src="Google__G__logo.svg.png" alt="Instagram" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+    Avalie nossa empresa
+  </a>
+
+   <a href="https://www.instagram.com/rps_rastreadores/" target="_blank">
+    <img src="instagram.png" alt="Instagram" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;">
+    rps_rastreadores
+  </a>
+</div>
+
+      </div>
+      <p class="copy">&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ✅ POPUP RPS -->
+  <div id="popup-rps" class="popup-rps">
+    <div class="icone-popup">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+        <path d="M6 18h12l-1.5-7.5a4.5 4.5 0 0 0-9 0L6 18z" stroke="#74f000" stroke-width="2" fill="none"/>
+        <path d="M12 3v2M4 6l1.5 1.5M20 6l-1.5 1.5" stroke="#74f000" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="texto-popup">
+      <p class="linha1"><strong>RPS informa:</strong><br>+ um veículo recuperado há <strong>8 minutos</strong>!</p>
+      <p class="linha2">🚗 Já são mais de <strong>100 veículos</strong> recuperados!</p>
+    </div>
+  </div>
+
+  <script>
+    function mostrarPopupRPS() {
+      const popup = document.getElementById("popup-rps");
+      popup.classList.add("mostrar");
+      setTimeout(() => {
+        popup.classList.remove("mostrar");
+      }, 5000);
+    }
+
+    function loopPopupRPS() {
+      const delay = Math.floor(Math.random() * 10000) + 50000;
+      setTimeout(() => {
+        mostrarPopupRPS();
+        loopPopupRPS();
+      }, delay);
+    }
+
+    window.addEventListener("load", loopPopupRPS);
+  </script>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Proposta RPS Rastreadores</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Estilo do botão */
+    .btn-proposta {
+      background-color: #fFD700;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-proposta:hover {
+      background-color: #FFD700;
+    }
+
+    /* Estilo do fundo do modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Conteúdo do modal */
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      border: 2px solid #FFD700;
+    }
+
+    /* Botão de fechar */
+    .close {
+      color: #000;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    /* Inputs */
+    .modal input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #FFD700;
+      border-radius: 8px;
+    }
+
+    /* Botão enviar */
+    .modal button.enviar {
+      background-color: #001b5e;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .modal button.enviar:hover {
+      background-color: #FFD700;
+    }
+
+    h2 {
+      color: #FFD700;
+    }
+
+    p {
+      color: #FFD700;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Botão para abrir o modal -->
+
+<!-- Estrutura do Modal -->
+<div id="propostaModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Conte-nos um pouco mais...</h2>
+    <p>Preencha seus dados e receba uma proposta personalizada!</p>
+    <form id="formProposta">
+      <input type="text" id="nome" placeholder="Me chamo" required>
+      <div style="display: flex; gap: 10px;">
+        <input type="text" id="ddd" placeholder="DDD" maxlength="2" required style="width: 30%;">
+        <input type="text" id="celular" placeholder="Celular" required style="width: 70%;">
+      </div>
+      <input type="email" id="email" placeholder="Meu e-mail" required>
+      <button type="submit" class="enviar">ENVIAR</button>
+    </form>
+  </div>
+</div>
+
+<!-- Script para abrir/fechar modal -->
+<script>
+  const modal = document.getElementById("propostaModal");
+  const btn = document.getElementById("openModal");
+  const span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Ação no envio do formulário
+  document.getElementById('formProposta').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const ddd = document.getElementById('ddd').value;
+    const celular = document.getElementById('celular').value;
+    const email = document.getElementById('email').value;
+
+    alert(`Obrigado ${nome}! Sua proposta será enviada para ${email}.`);
+    modal.style.display = "none";
+
+    // Aqui você pode adicionar integração com WhatsApp, e-mail, banco, etc.
+  });
+</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,234 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.pagamento-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.pagamento-card {
+  background:rgb(0, 0, 0);
+  color: #fff;
+  padding: 30px;
+  width: 300px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.rounded-left {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.rounded-right {
+  border-top-right-radius: 60px;
+}
+
+.pagamento-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #FFD700;
+}
+
+.pagamento-card h5 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #FFD700;
+}
+
+.pagamento-card p {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.pagamento-card p span {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #FFD700;
+}
+
+.preco {
+  font-size: 28px;
+  color: #FFD700;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.preco2 {
+  font-size: 28px;
+  color: #FFD700;
+  font-weight: bold;
+  margin-bottom: 38px;
+}
+.preco-destaque {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.linha-cima {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.linha-baixo {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.rs {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.grande {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #A3FF00; /* verde-limão */
+  line-height: 1;
+}
+
+.centavos {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #A3FF00;
+  margin-left: -4px;
+}
+
+.barra {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btn-opcao {
+  background: #fff;
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-opcao:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.depoimentos h2 {
+    text-align: center;
+  font-size: 62px;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.depoimentos h2 span {
+  color: #FFD700;
+}
+
+.pagamento-card {
+  margin-top: -60px;
+}
+
+.btn-mini {
+  background: transparent;
+  border: 2px solid #FFD700;
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 8px 0 8px 0;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+
+.btn-mini:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.btn-mini {
+  position: relative;
+  background: transparent;
+  border: 2px solid #FFD700;
+  color: #f0f0f0;
+  padding: 10px 14px;
+  border-radius: 8px 0 8px 0;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+  transition: 0.3s;
+  margin-top: 10px;
+  overflow: hidden; /* necessário para conter o brilho */
+  z-index: 0;
+}
+
+.btn-mini::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: rotate(25deg);
+  animation: brilho 2.5s linear infinite;
+  pointer-events: none; /* deixa o clique passar */
+  z-index: 1;
+}
+
+.btn-mini span {
+  position: relative;
+  z-index: 2; /* garante que o texto fique acima do brilho */
+}
+
+@keyframes brilho {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pagamento-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pagamento-card {
+    margin-bottom: 80px; /* Aumenta o espaço entre os cards */
+  }
+
+
+  .pagamento-card {
+    width: 70%; /* diminui a largura do balão no celular */
+  }
+}
+
