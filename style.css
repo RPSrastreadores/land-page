@@ -67,13 +67,24 @@ header nav ul li a:hover {
   color: #FFD700;
 }
 
-header .btn {
+header .btn1 {
   background: #FFD700;
   color: #000;
   padding: 8px 16px;
   border-radius: 4px;
   font-weight: bold;
   transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .btn1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 6px 10px;
+    z-index: 1000;
+  }
 }
 
 header .btn:hover {
@@ -1002,6 +1013,32 @@ footer .copy {
 }
 
 @media (max-width: 768px) {
+  .curva-wrapper {
+    height: 80px;
+    margin-bottom: -40px;
+  }
+
+  .curva-svg {
+    width: 20%; /* ocupa toda a largura da tela */
+    height: 75px;
+  }
+
+  .logo-centralizada {
+    top: 2px;
+    left: 8.5%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 56px;
+  }
+
+  .logo-centralizada img {
+    width: 30px;
+    height: 38px;
+  }
+}
+
+
+@media (max-width: 768px) {
   .botoes {
     display: flex;
     flex-direction: column;
@@ -1518,6 +1555,11 @@ p2 {
 .btn-prev:hover, .btn-next:hover {
   background-color: #FFD700;
 }
+
+
+
+
+
 
 
 
