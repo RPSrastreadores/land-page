@@ -1013,27 +1013,10 @@ footer .copy {
 }
 
 @media (max-width: 768px) {
-  .curva-wrapper {
-    height: 80px;
-    margin-bottom: -40px;
-  }
-
-  .curva-svg {
-    width: 20%; /* ocupa toda a largura da tela */
-    height: 75px;
-  }
-
+  .curva-wrapper,
+  .curva-svg,
   .logo-centralizada {
-    top: 2px;
-    left: 8.5%;
-    transform: translateX(-50%);
-    width: 56px;
-    height: 56px;
-  }
-
-  .logo-centralizada img {
-    width: 30px;
-    height: 38px;
+    display: none !important;
   }
 }
 
@@ -1555,6 +1538,7 @@ p2 {
 .btn-prev:hover, .btn-next:hover {
   background-color: #FFD700;
 }
+
 
 
 
