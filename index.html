@@ -292,10 +292,60 @@ modal.style.display = "none";
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="faq-rps">
+  <div class="container-faq">
+    <h2>Perguntas Frequentes</h2>
+    <div class="linha-amarela"></div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-question">Quem somos nós?</button>
+        <div class="faq-answer">
+          <p>Somos uma empresa especializada em rastreamento veicular, comprometida em oferecer tecnologia de ponta, segurança e um atendimento diferenciado. Nosso foco é garantir tranquilidade aos clientes, com serviços disponíveis 24 horas por dia e suporte ágil sempre que necessário.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Os rastreadores são realmente confiáveis?</button>
+        <div class="faq-answer">
+          <p>Sim. Nossos dispositivos utilizam a mais avançada tecnologia de rastreamento disponível no mercado, garantindo precisão com margem de erro de apenas 3 metros. Além disso, oferecem resposta rápida em ações essenciais, como o envio de sinal de bloqueio em cerca de 10 segundos. Os equipamentos contam ainda com recursos extras, como controle de velocidade, replay da rota diária e diversas funcionalidades que aumentam a segurança e o controle sobre o veículo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Como funciona o rastreamento?</button>
+        <div class="faq-answer">
+          <p>Você terá controle total sobre a localização do seu veículo diretamente na palma da sua mão, através de nosso aplicativo e plataforma online. Como camada adicional de segurança, nossa central de monitoramento também acompanha os sinais em tempo real, garantindo uma resposta imediata em caso de necessidade.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Posso compartilhar o acesso do aplicativo com outra pessoa?</button>
+        <div class="faq-answer">
+          <p>Sim. O aplicativo pode ser acessado em quantos dispositivos você quiser, permitindo que familiares ou pessoas de confiança também acompanhem o veículo em tempo real. Além de toda essa praticidade, o rastreador veicular pode ainda gerar benefícios adicionais: muitas seguradoras oferecem descontos no valor do seguro para veículos que já possuem rastreamento ativo, garantindo ainda mais economia e segurança para você.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const perguntas = document.querySelectorAll('.faq-question');
+  perguntas.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const resposta = btn.nextElementSibling;
+      resposta.classList.toggle('open');
+      btn.classList.toggle('active');
+    });
+  });
+</script>
+
+
 <!-- Benefícios -->
   <section id="beneficios" class="benefits">
     <div class="container">
-      <h2>Por que escolher a nossa empresa?</h2>
+      <h2><span>Por que escolher </span>nossa empresa?</h2>
       <div class="grid">
         <div class="card">
           <h3>Monitoramento 24h</h3>
@@ -628,6 +678,4 @@ modal.style.display = "none";
 
 </body>
 </html>
-
-
 
